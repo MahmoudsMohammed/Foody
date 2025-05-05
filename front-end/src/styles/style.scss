@@ -1,0 +1,8 @@
+@use "abstracts"; // Variables, functions, mixins, placeholders
+@use "vendors"; // Third-party libraries and frameworks
+@use "base"; // Base styles, resets, typography, etc.
+@use "layouts"; // Layout components and grid systems
+@use "components"; // Reusable UI components
+@use "pages"; // Page-specific styles
+@use "themes"; // Theme variations
+@use "shame"; // Quick fixes, hacks (to be refactored later)

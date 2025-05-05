@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.light-theme {
+  @include theme(light);
+  // class set on body based on the selected theme
+  // all style reset
+}

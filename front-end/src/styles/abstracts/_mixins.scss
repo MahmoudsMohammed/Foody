@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+// media query
+@mixin breakpoint-up($key) {
+  $size: map-get($breakpoints, $key);
+
+  @if ($size) {
+    @media (width >= $size) {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $breakpoints';
+  }
+}
+@mixin breakpoint-down($key) {
+  $size: map-get($breakpoints, $key);
+
+  @if ($size) {
+    @media (width <= $size) {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $breakpoints';
+  }
+}
+
+// line clamp
+@mixin line-clamp($row-number) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $row-number;
+  overflow: hidden;
+}
+
+// theme
+@mixin theme($theme-name) {
+  $theme: map-get($themes, $theme-name);
+
+  background-color: map-get($theme, background);
+  color: map-get($theme, text);
+
+  button {
+    background-color: map-get($theme, primary);
+  }
+}

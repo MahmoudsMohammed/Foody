@@ -1,0 +1,4 @@
+@use '../abstracts' as *;
+.button {
+  color: map-get($colors, primary);
+}
