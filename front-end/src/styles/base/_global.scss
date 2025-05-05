@@ -1,17 +1,18 @@
+@use "../abstracts" as *;
 body {
-  font-family: var(--ff-primary);
-  font-size: var(--fs-400);
-  background-color: var(--clr-background);
-  color: var(--clr-text);
-  font-weight: 400;
+  // at this approach no need for @use as the browser detect the css values
+  // unlike when use any SCSS features which compile into a CSS value so need to be exist at the compile time
+  // font-family: var(--ff-primary);
+  // font-size: var(--fs-400);
+  // background-color: var(--clr-background);
+  // color: var(--clr-text);
+  // font-weight: 400;
+
+  font-family: $main-font;
 }
 
 h1,
 h2,
 h3 {
   line-height: 1.1;
-}
-
-.container {
-  background-color: red;
 }

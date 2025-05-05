@@ -1,29 +1,25 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
-:root {
-  --ff-primary: system-ui, sans-serif;
-
-  @each $key, $value in $font-sizes {
-    --fs-#{$key}: #{$value};
-  }
-
-  @each $key, $value in $font-weights {
-    --fw-#{$key}: #{$value};
-  }
-
-  @each $key, $value in $colors {
-    --clr-#{$key}: #{$value};
+@each $key, $value in $colors {
+  .tc-#{$key} {
+    color: $value;
   }
 }
-@each $key, $value in $colors {
-  @warn 'LOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOl';
-  @if $key == 'background' {
-    .bg {
-      background-color: $value;
-    }
-  } @else {
-    .color-#{$key} {
-      color: $value;
-    }
+
+@each $key, $value in $backgrounds {
+  .bac-#{$key} {
+    background-color: $value;
+  }
+}
+
+@each $key, $value in $font-sizes {
+  .fs-#{$key} {
+    font-size: $value;
+  }
+}
+
+@each $key, $value in $font-weights {
+  .fw-#{$key} {
+    font-weight: $value;
   }
 }
