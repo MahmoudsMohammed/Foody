@@ -1,8 +1,8 @@
-@use "abstracts"; // Variables, functions, mixins, placeholders
-@use "vendors"; // Third-party libraries and frameworks
-@use "base"; // Base styles, resets, typography, etc.
-@use "layouts"; // Layout components and grid systems
-@use "components"; // Reusable UI components
-@use "pages"; // Page-specific styles
-@use "themes"; // Theme variations
-@use "shame"; // Quick fixes, hacks (to be refactored later)
+@use "abstracts" as *; // Variables, functions, mixins, placeholders
+@use "vendors" as *; // Third-party libraries and frameworks
+@use "base" as *; // Base styles, resets, typography, etc.
+@use "layouts" as *; // Layout components and grid systems
+@use "components" as *; // Reusable UI components
+@use "pages" as *; // Page-specific styles
+@use "themes" as *; // Theme variations
+@use "shame" as *; // Quick fixes, hacks (to be refactored later)

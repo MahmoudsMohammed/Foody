@@ -2,22 +2,11 @@
 @use "sass:map";
 
 // media query
-@mixin breakpoint-up($key) {
+@mixin breakpoint($key) {
   $size: map.get($breakpoints, $key);
 
   @if ($size) {
     @media (width >= $size) {
-      @content;
-    }
-  } @else {
-    @error '`#{$key}` does not exist in the $breakpoints';
-  }
-}
-@mixin breakpoint-down($key) {
-  $size: map.get($breakpoints, $key);
-
-  @if ($size) {
-    @media (width <= $size) {
       @content;
     }
   } @else {
@@ -36,11 +25,28 @@
 // theme
 @mixin theme($theme-name) {
   $theme: map.get($themes, $theme-name);
-
-  background-color: map.get($theme, background);
-  color: map.get($theme, text);
-
-  button {
-    background-color: map.get($theme, primary);
+  @each $key, $value in $theme {
+    --#{$key}: #{$value};
+  }
+  background-color: var(--bg);
+  border-color: var(--border);
+  color: var(--text);
+  .muted {
+    color: var(--text-muted);
+  }
+  .surface {
+    background-color: var(--surface);
+  }
+  .primary {
+    background-color: var(--primary);
+    &:hover {
+      background-color: var(--primary-hover);
+    }
+  }
+  .error {
+    background-color: var(--error);
+  }
+  .accent {
+    background-color: var(--accent);
   }
 }

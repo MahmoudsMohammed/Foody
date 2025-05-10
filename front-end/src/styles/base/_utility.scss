@@ -6,11 +6,6 @@
   }
 }
 
-@each $key, $value in $backgrounds {
-  .bac-#{$key} {
-    background-color: $value;
-  }
-}
 
 @each $key, $value in $font-sizes {
   .fs-#{$key} {

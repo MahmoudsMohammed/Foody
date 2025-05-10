@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 .dark-theme {
   @include theme(dark);
   // class set on body based on the selected theme

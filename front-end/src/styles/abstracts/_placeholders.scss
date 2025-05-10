@@ -3,3 +3,9 @@
   align-items: center;
   gap: 0.5em;
 }
+
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
