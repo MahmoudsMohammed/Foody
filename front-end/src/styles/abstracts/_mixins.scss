@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "functions" as *;
 @use "sass:map";
 
 // media query
@@ -49,4 +50,17 @@
   .accent {
     background-color: var(--accent);
   }
+}
+
+@mixin rowGap($gap) {
+  display: flex;
+  align-items: center;
+  gap: rem($gap);
+}
+
+@mixin colGap($gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem($gap);
 }

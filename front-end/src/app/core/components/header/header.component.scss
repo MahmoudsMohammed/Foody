@@ -1,0 +1,61 @@
+@use "../../../../styles/abstracts" as *;
+.header {
+  @extend %between;
+  padding-inline-end: rem(30);
+  padding-inline-start: rem(15);
+  border-bottom: 2px solid var(--primary);
+}
+.header__logo img {
+  width: rem(60);
+  height: rem(60);
+}
+.header__nav {
+  @include rowGap(30);
+  button {
+    border: none;
+  }
+}
+
+.header__user {
+  @include rowGap(8);
+  background-color: transparent;
+  color: var(--primary);
+  &:hover {
+    color: var(--primary-hover);
+  }
+}
+
+.header__lang {
+  @include rowGap(8);
+  background-color: transparent;
+  position: relative;
+  color: var(--text-muted);
+  ul {
+    border: 1px solid var(--primary);
+    width: rem(150);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: rem(-15);
+    top: 120%;
+    background-color: var(--surface);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(10);
+    gap: rem(5);
+    &:hover {
+      background-color: var(--border);
+    }
+  }
+  img {
+    width: rem(25);
+    height: rem(25);
+    border-radius: 50%;
+  }
+}
