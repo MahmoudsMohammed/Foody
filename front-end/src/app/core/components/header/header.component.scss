@@ -1,8 +1,8 @@
 @use "../../../../styles/abstracts" as *;
 .header {
   @extend %between;
-  padding-inline-end: rem(30);
-  padding-inline-start: rem(15);
+  padding-inline-end: 1.5vw;
+  padding-inline-start: 1vw;
   border-bottom: 2px solid var(--primary);
 }
 .header__logo img {
@@ -11,51 +11,49 @@
 }
 .header__nav {
   @include rowGap(30);
+  gap: 1vw;
   button {
     border: none;
   }
 }
-
 .header__user {
   @include rowGap(8);
   background-color: transparent;
   color: var(--primary);
+  position: relative;
   &:hover {
     color: var(--primary-hover);
   }
+  .list {
+    display: none;
+    position: absolute;
+    width: 120%;
+    top: 120%;
+    left: -10%;
+  }
 }
-
 .header__lang {
   @include rowGap(8);
   background-color: transparent;
   position: relative;
   color: var(--text-muted);
   ul {
-    border: 1px solid var(--primary);
-    width: rem(150);
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    display: none;
+    width: 140%;
     position: absolute;
-    left: rem(-15);
+    left: -20%;
     top: 120%;
-    background-color: var(--surface);
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: rem(10);
-    gap: rem(5);
-    &:hover {
-      background-color: var(--border);
-    }
   }
   img {
     width: rem(25);
     height: rem(25);
     border-radius: 50%;
+  }
+}
+
+.info {
+  display: none;
+  @include breakpoint(md) {
+    display: block;
   }
 }

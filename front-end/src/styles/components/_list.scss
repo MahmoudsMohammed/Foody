@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+.list {
+  color: var(--text-muted);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--primary);
+  background-color: var(--surface);
+  border-radius: 5px;
+  overflow: hidden;
+  li {
+    @extend %between;
+    padding: rem(10);
+    gap: rem(5);
+    &:hover {
+      background-color: var(--border);
+    }
+  }
+}
