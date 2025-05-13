@@ -1,4 +1,4 @@
-import { inject, Injectable, Renderer2, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({ providedIn: 'root' })
@@ -6,8 +6,6 @@ export class Configurations {
   #lang = signal<string>('en');
   #theme = signal<string>('light');
   _translateService = inject(TranslateService);
-  _render = inject(Renderer2);
-  _document = inject(Document);
 
   setLanguage(lang: string) {
     if (['en', 'ar'].includes(lang)) {
@@ -21,16 +19,15 @@ export class Configurations {
     }
   }
 
-  setTheme(theme: string) {
+  theme(theme: string) {
+    let selectedTheme = '';
     if (['light', 'dark'].includes(theme)) {
-      const selectedTheme = theme === 'light' ? 'light-theme' : 'dark-theme';
+      selectedTheme = theme === 'light' ? 'light-theme' : 'dark-theme';
       localStorage.setItem('theme', selectedTheme);
-      this._document.body.className = '';
-      this._render.addClass(this._document.body, selectedTheme);
     } else {
+      selectedTheme = 'light-theme';
       localStorage.setItem('theme', 'light-theme');
-      this._document.body.className = '';
-      this._render.addClass(this._document.body, 'light-theme');
     }
+    return selectedTheme;
   }
 }
