@@ -1,5 +1,4 @@
 @use "../abstracts" as *;
-@use "../themes" as *;
 @use "sass:map";
 
 body {
@@ -12,7 +11,6 @@ body {
   // font-weight: 400;
   font-family: $main-font;
   font-size: map.get($map: $font-sizes, $key: default);
-  @extend .light-theme;
 }
 
 h1,
