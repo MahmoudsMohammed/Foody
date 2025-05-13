@@ -5,6 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class Configurations {
   #lang = signal<string>('en');
   #theme = signal<string>('light');
+  appLang = this.#lang.asReadonly;
+  appTheme = this.#theme.asReadonly;
   _translateService = inject(TranslateService);
 
   setLanguage(lang: string) {
@@ -28,6 +30,7 @@ export class Configurations {
       selectedTheme = 'light-theme';
       localStorage.setItem('theme', 'light-theme');
     }
+    this.#theme.set(selectedTheme);
     return selectedTheme;
   }
 }
