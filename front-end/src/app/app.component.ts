@@ -15,19 +15,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Set Default App Language
-    if ('lang' in localStorage) {
-      this._configurationsService.setLanguage(localStorage.getItem('lang')!);
-    } else {
-      this._configurationsService.setLanguage('en');
-    }
-
+    this._configurationsService.setLanguage(
+      localStorage.getItem('lang') ?? 'en'
+    );
     // Set Default App Theme
     document.body.className = '';
-    if ('theme' in localStorage) {
-      this._render.addClass(document.body, localStorage.getItem('theme')!);
-    } else {
-      const theme = this._configurationsService.theme('light');
-      this._render.addClass(document.body, theme);
-    }
+    const theme = this._configurationsService.theme(
+      localStorage.getItem('theme') ?? 'light'
+    );
+    this._render.addClass(document.body, theme);
   }
 }

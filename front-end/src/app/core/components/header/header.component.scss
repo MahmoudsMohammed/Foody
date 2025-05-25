@@ -51,6 +51,16 @@
   }
 }
 
+.header__theme {
+  background-color: transparent;
+  .moon {
+    color: #c0c0c0;
+  }
+  .sun {
+    color: #ffc107;
+  }
+}
+
 .info {
   display: none;
   @include breakpoint(md) {

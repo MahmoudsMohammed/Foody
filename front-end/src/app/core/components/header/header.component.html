@@ -10,15 +10,22 @@
       </ul>
     </button>
     <button class="header__lang" (click)="displayMenu(languages)">
+      @if(appLang() === 'ar'){
       <img src="ar.jpg" alt="" /><span class="info">Arabic</span>
+      }@else {
+      <img src="en.png" alt="" /><span class="info">English</span>
+      }
       <ul class="list animate__animated" #languages>
         <li><img src="ar.jpg" alt="" />Arabic</li>
         <li><img src="en.png" alt="" />English</li>
       </ul>
     </button>
-    <button class="header__theme">
-      <i class="fa-solid fa-sun"></i>
-      <i class="fa-solid fa-moon"></i>
+    <button class="header__theme" (click)="onChangeTheme()">
+      @if(appTheme() === 'light'){
+      <i class="moon fa-solid fa-moon"></i>
+      }@else{
+      <i class="sun fa-solid fa-sun"></i>
+      }
     </button>
   </nav>
 </header>
