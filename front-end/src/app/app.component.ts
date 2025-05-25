@@ -18,8 +18,12 @@ export class AppComponent implements OnInit {
     this._configurationsService.setLanguage(
       localStorage.getItem('lang') ?? 'en'
     );
+    if (this._configurationsService.appLang() === 'ar') {
+      this._render.addClass(document.body, 'rtl');
+    } else {
+      this._render.removeClass(document.body, 'rtl');
+    }
     // Set Default App Theme
-    document.body.className = '';
     const theme = this._configurationsService.theme(
       localStorage.getItem('theme') ?? 'light'
     );

@@ -11,13 +11,21 @@
     </button>
     <button class="header__lang" (click)="displayMenu(languages)">
       @if(appLang() === 'ar'){
-      <img src="ar.jpg" alt="" /><span class="info">Arabic</span>
+      <img src="ar.jpg" alt="" /><span class="info">{{
+        "header.ar" | translate
+      }}</span>
       }@else {
-      <img src="en.png" alt="" /><span class="info">English</span>
+      <img src="en.png" alt="" /><span class="info">{{
+        "header.en" | translate
+      }}</span>
       }
       <ul class="list animate__animated" #languages>
-        <li><img src="ar.jpg" alt="" />Arabic</li>
-        <li><img src="en.png" alt="" />English</li>
+        <li (click)="onChangeLanguage('ar')">
+          <img src="ar.jpg" alt="" />{{ "header.ar" | translate }}
+        </li>
+        <li (click)="onChangeLanguage('en')">
+          <img src="en.png" alt="" />{{ "header.en" | translate }}
+        </li>
       </ul>
     </button>
     <button class="header__theme" (click)="onChangeTheme()">
