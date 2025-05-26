@@ -8,12 +8,9 @@ export const routes: Routes = [
         (r) => r.routes
       ),
   },
-  // {
-  //   path:'auth'
-  // },
   {
     path: '**',
-    redirectTo: 'user',
+    redirectTo: 'user/all',
     pathMatch: 'full',
   },
 ];
