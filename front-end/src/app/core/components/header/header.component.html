@@ -4,9 +4,24 @@
     <button class="header__user" (click)="displayMenu(userInfo)">
       <i class="fa-solid fa-user"></i><span class="info">Mahmoud</span>
       <ul class="list animate__animated" #userInfo>
-        <li><i class="fa-solid fa-id-badge"></i>Profile</li>
-        <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
-        <li><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</li>
+        <li>
+          <a>
+            <i class="fa-solid fa-id-badge"></i
+            >{{ "header.profile" | translate }}
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa-solid fa-cart-shopping"></i
+            >{{ "header.cart" | translate }}
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i
+            >{{ "header.out" | translate }}
+          </a>
+        </li>
       </ul>
     </button>
     <button class="header__lang" (click)="displayMenu(languages)">

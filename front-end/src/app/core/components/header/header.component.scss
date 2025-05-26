@@ -6,19 +6,23 @@
   border-bottom: 2px solid var(--primary);
 }
 .header__logo img {
-  width: rem(60);
-  height: rem(60);
+  width: rem(40);
+  height: rem(40);
+  @include breakpoint(md) {
+    width: rem(60);
+    height: rem(60);
+  }
 }
 .header__nav {
   @include rowGap(30);
   gap: 1vw;
   button {
     border: none;
+    background-color: transparent;
   }
 }
 .header__user {
   @include rowGap(8);
-  background-color: transparent;
   color: var(--primary);
   position: relative;
   &:hover {
@@ -27,32 +31,38 @@
   .list {
     display: none;
     position: absolute;
-    width: 120%;
-    top: 120%;
-    left: -10%;
+    width: rem(150);
+    top: 130%;
+    inset-inline-end: -20px;
+  }
+  a {
+    @extend %between;
+    width: 100%;
   }
 }
 .header__lang {
   @include rowGap(8);
-  background-color: transparent;
   position: relative;
   color: var(--text-muted);
   ul {
-    // display: none;
-    width: 140%;
+    display: none;
+    width: rem(150);
     position: absolute;
-    left: -20%;
-    top: 120%;
+    top: 130%;
+    inset-inline-end: rem(-20);
   }
   img {
-    width: rem(25);
-    height: rem(25);
+    width: rem(20);
+    height: rem(20);
     border-radius: 50%;
+    @include breakpoint(md) {
+      width: rem(25);
+      height: rem(25);
+    }
   }
 }
 
 .header__theme {
-  background-color: transparent;
   .moon {
     color: #c0c0c0;
   }

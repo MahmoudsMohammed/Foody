@@ -11,6 +11,7 @@ body {
   // font-weight: 400;
   font-family: $main-font;
   font-size: map.get($map: $font-sizes, $key: default);
+  transition: all ease-in-out $transition-duration;
 }
 
 h1,

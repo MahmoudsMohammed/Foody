@@ -1,6 +1,9 @@
 {
   "header": {
     "en": "ُEnglish",
-    "ar": "Arabic"
+    "ar": "Arabic",
+    "profile": "Profile",
+    "cart": "Cart",
+    "out": "Logout"
   }
 }

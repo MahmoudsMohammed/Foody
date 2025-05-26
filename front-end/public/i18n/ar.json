@@ -1,6 +1,9 @@
 {
   "header": {
     "en": "انجليزي",
-    "ar": "عربي"
+    "ar": "عربي",
+    "profile": "Profile",
+    "cart": "Cart",
+    "out": "Logout"
   }
 }
