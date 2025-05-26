@@ -26,9 +26,11 @@
 // theme
 @mixin theme($theme-name) {
   $theme: map.get($themes, $theme-name);
+  // to create variables at level of classes which added to body
   @each $key, $value in $theme {
     --#{$key}: #{$value};
   }
+  // variable local at level of class over ride global if exesist
   background-color: var(--bg);
   border-color: var(--border);
   color: var(--text);

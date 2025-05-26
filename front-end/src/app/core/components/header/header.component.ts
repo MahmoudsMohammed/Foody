@@ -9,10 +9,11 @@ import {
 import { RouterLink } from '@angular/router';
 import { Configurations } from '../../services/configurations.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { MenuDirective } from '../../../shared/directives/menu.directive';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, TranslateModule],
+  imports: [RouterLink, TranslateModule, MenuDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,11 +25,6 @@ export class HeaderComponent implements OnInit {
   appTheme = computed(() => this._configurations.appTheme());
 
   ngOnInit(): void {}
-
-  displayMenu(el: HTMLElement) {
-    // this._render.setStyle(el, 'display', 'block');
-    this._render.addClass(el, 'animate__backInRight');
-  }
 
   onChangeTheme() {
     const theme = this.appTheme() === 'light' ? 'dark' : 'light';

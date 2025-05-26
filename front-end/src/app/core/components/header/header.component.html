@@ -1,9 +1,9 @@
 <header class="header">
   <a routerLink="" class="header__logo"><img src="logo.png" alt="logo" /></a>
   <nav class="header__nav">
-    <button class="header__user" (click)="displayMenu(userInfo)">
+    <button class="header__user">
       <i class="fa-solid fa-user"></i><span class="info">Mahmoud</span>
-      <ul class="list animate__animated" #userInfo>
+      <ul class="list" appMenu>
         <li>
           <a>
             <i class="fa-solid fa-id-badge"></i
@@ -24,7 +24,7 @@
         </li>
       </ul>
     </button>
-    <button class="header__lang" (click)="displayMenu(languages)">
+    <button class="header__lang">
       @if(appLang() === 'ar'){
       <img src="ar.jpg" alt="" /><span class="info">{{
         "header.ar" | translate
@@ -34,7 +34,7 @@
         "header.en" | translate
       }}</span>
       }
-      <ul class="list animate__animated" #languages>
+      <ul class="list animate__animated" appMenu>
         <li (click)="onChangeLanguage('ar')">
           <img src="ar.jpg" alt="" />{{ "header.ar" | translate }}
         </li>

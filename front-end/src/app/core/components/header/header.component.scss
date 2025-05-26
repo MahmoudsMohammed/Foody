@@ -16,9 +16,14 @@
 .header__nav {
   @include rowGap(30);
   gap: 1vw;
+  height: rem(40);
+  @include breakpoint(md) {
+    height: rem(60);
+  }
   button {
     border: none;
     background-color: transparent;
+    height: 100%;
   }
 }
 .header__user {
@@ -32,7 +37,7 @@
     display: none;
     position: absolute;
     width: rem(150);
-    top: 130%;
+    top: 90%;
     inset-inline-end: -20px;
   }
   a {
@@ -48,7 +53,7 @@
     display: none;
     width: rem(150);
     position: absolute;
-    top: 130%;
+    top: 90%;
     inset-inline-end: rem(-20);
   }
   img {
