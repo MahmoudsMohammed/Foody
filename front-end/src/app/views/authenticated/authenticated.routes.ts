@@ -9,11 +9,17 @@ export const routes: Routes = [
     children: [
       {
         path: 'all',
-        component: AllMealsComponent,
+        loadComponent: () =>
+          import('./features/all-meals/all-meals.component').then(
+            (m) => m.AllMealsComponent
+          ),
       },
       {
         path: 'all/:search',
-        component: AllMealsComponent,
+        loadComponent: () =>
+          import('./features/all-meals/all-meals.component').then(
+            (m) => m.AllMealsComponent
+          ),
       },
     ],
   },

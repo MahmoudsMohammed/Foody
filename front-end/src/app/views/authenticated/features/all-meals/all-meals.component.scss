@@ -1,0 +1,5 @@
+@use "../../../../../styles/abstracts" as *;
+.container {
+  padding: rem(20);
+  @include colGap(20);
+}

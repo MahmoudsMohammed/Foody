@@ -1,1 +1,16 @@
-<p>search works!</p>
+<div class="search">
+  <input
+    name="meal"
+    class="search__input fs-small"
+    type="text"
+    [placeholder]="'allMeals.search' | translate"
+    [(ngModel)]="meal"
+  />
+  <button
+    [disabled]="meal.length === 0"
+    class="search__btn fs-small fw-two bg-primary c-text"
+    (click)="onSearch()"
+  >
+    {{ "allMeals.btn" | translate }}
+  </button>
+</div>

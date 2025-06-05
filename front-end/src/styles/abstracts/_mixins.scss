@@ -29,6 +29,12 @@
   // to create variables at level of classes which added to body
   @each $key, $value in $theme {
     --#{$key}: #{$value};
+    .bg-#{$key} {
+      background-color: #{$value};
+    }
+    .c-#{$key} {
+      color: #{$value};
+    }
   }
   // variable local at level of class over ride global if exesist
   background-color: var(--bg);

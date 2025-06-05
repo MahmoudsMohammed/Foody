@@ -1,0 +1,32 @@
+@use "../../../../../../../styles/abstracts" as *;
+
+.search {
+  width: max(20vw, rem(230));
+  border-radius: rem(16);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: all calc($transition-duration / 2) ease-in-out;
+  &:focus-within {
+    width: max(22vw, rem(250));
+  }
+}
+.search__input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: rem(8) rem(12);
+  &::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+.search__btn {
+  cursor: pointer;
+  border: none;
+  padding: rem(8) rem(12);
+  &:disabled {
+    opacity: 0.8;
+    cursor: no-drop;
+  }
+}

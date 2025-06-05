@@ -51,12 +51,8 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./src/styles/style.scss",
-              "src/styles.scss"
-            ],
-            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "styles": ["./src/styles/style.scss", "src/styles.scss"],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -125,12 +121,8 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./src/styles/style.scss",
-              "src/styles.scss"
-            ],
-            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "styles": ["./src/styles/style.scss", "src/styles.scss"],
+            "scripts": []
           }
         }
       }
