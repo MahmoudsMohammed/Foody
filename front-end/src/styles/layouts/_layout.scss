@@ -1,5 +1,10 @@
 @use "../abstracts" as *;
-.grid-flow {
+.container {
+  display: grid;
+  gap: rem(20);
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(auto-fill, minmax(rem(400), 1fr));
+  }
 }
 .center {
   display: flex;

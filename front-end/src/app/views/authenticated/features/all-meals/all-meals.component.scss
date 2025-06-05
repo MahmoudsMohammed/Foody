@@ -1,5 +1,10 @@
 @use "../../../../../styles/abstracts" as *;
-.container {
-  padding: rem(20);
-  @include colGap(20);
+.all-meals {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  padding: rem(20) rem(10);
+  @include breakpoint(sm) {
+    padding: rem(30) rem(20);
+  }
 }

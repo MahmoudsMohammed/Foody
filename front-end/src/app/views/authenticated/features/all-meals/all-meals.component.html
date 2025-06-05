@@ -1,3 +1,8 @@
-<div class="container">
-  <app-search /> <app-meal-card [meal]="meals()[1]" />
+<div class="all-meals">
+  <app-search />
+  <div class="container">
+    @for(meal of meals();track meal){
+    <app-meal-card [meal]="meal" />
+    }
+  </div>
 </div>

@@ -1,15 +1,18 @@
 @use "../../../../../../../styles/abstracts" as *;
-
+:host {
+  display: flex;
+  justify-content: center;
+}
 .search {
   border: 1px solid var(--border);
-  width: max(20vw, rem(230));
+  width: max(25vw, rem(230));
   border-radius: rem(16);
   overflow: hidden;
   display: flex;
   align-items: center;
   transition: all $half-transition-duration ease-in-out;
   &:focus-within {
-    width: max(22vw, rem(250));
+    width: max(27vw, rem(250));
   }
 }
 .search__input {
