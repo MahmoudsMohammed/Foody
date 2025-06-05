@@ -1,0 +1,48 @@
+@use "../../../../../../../styles/abstracts" as *;
+.meal {
+  border: 1px solid var(--border);
+  border-radius: rem(16);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all $half-transition-duration ease-in-out;
+  &:hover {
+    background-color: var(--surface);
+    img {
+      transform: scale(1.2);
+    }
+  }
+}
+.meal__img {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  img {
+    height: rem(270);
+    transition: all $half-transition-duration ease-in-out;
+  }
+}
+.meal_tags {
+  display: flex;
+  gap: rem(5);
+}
+
+.meal_tag {
+  padding: rem(5) rem(8);
+  border-radius: rem(15);
+}
+
+.meal_content {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  padding: rem(10);
+}
+
+.meal_price {
+  padding-top: rem(10);
+  margin: 0 {
+    top: rem(10);
+  }
+  border-top: 1px solid var(--border);
+  text-align: center;
+}

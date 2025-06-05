@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -11,8 +12,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchComponent {
   meal = '';
+  _router = inject(Router);
 
   onSearch() {
-    console.log('Meal ===>', this.meal);
+    this._router.navigate(['/user/all/', this.meal]);
   }
 }

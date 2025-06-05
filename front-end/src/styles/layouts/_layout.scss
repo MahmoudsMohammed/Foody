@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+.grid-flow {
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.between {
+  @extend .center;
+  justify-content: space-between;
+}
+.p-10 {
+  padding: rem(10);
+}
+.px-10 {
+  padding: 0 rem(10);
+}
+.py-10 {
+  padding: rem(10) 0;
+}

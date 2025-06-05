@@ -1,1 +1,42 @@
-<p>meal-card works!</p>
+<div class="meal">
+  <figure class="meal__img">
+    <img [src]="meal().imageUrl" alt="meal image" />
+  </figure>
+  <div class="meal_content">
+    <div class="meal_data between">
+      <span>{{ meal().name }}</span>
+      <i
+        class="fa-solid fa-heart"
+        [ngClass]="{ 'c-error': meal().favorite }"
+      ></i>
+    </div>
+    <div class="meal__rate">
+      @for (item of stars(); track $index) {
+      <i
+        class="fa-solid c-accent"
+        [ngClass]="{
+          'fa-star-half-stroke': item === 'half',
+          'fa-star': item === 'full' || item == 'none',
+          'c-accent': item === 'half' || item === 'full',
+          'c-text': item === 'none'
+        }"
+      ></i>
+      }
+    </div>
+    <div class="meal__info between">
+      <div class="meal_tags">
+        @for(tag of meal().tags;track tag){
+        <span class="meal_tag fs-mini bg-primary">{{ tag }}</span>
+        }
+      </div>
+      <span>
+        <i class="fa-solid fa-stopwatch"></i>
+        {{ meal().cookTime }}
+      </span>
+    </div>
+    <p class="meal_price c-accent fw-three">
+      <i class="fa-solid fa-dollar-sign"></i>
+      {{ meal().price }}
+    </p>
+  </div>
+</div>

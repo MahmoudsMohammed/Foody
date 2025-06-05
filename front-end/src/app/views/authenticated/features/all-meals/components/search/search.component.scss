@@ -1,12 +1,13 @@
 @use "../../../../../../../styles/abstracts" as *;
 
 .search {
+  border: 1px solid var(--border);
   width: max(20vw, rem(230));
   border-radius: rem(16);
   overflow: hidden;
   display: flex;
   align-items: center;
-  transition: all calc($transition-duration / 2) ease-in-out;
+  transition: all $half-transition-duration ease-in-out;
   &:focus-within {
     width: max(22vw, rem(250));
   }

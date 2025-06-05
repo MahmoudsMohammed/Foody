@@ -51,7 +51,11 @@
                 "input": "public"
               }
             ],
-            "styles": ["./src/styles/style.scss", "src/styles.scss"],
+            "styles": [
+              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css",
+              "./src/styles/style.scss",
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -121,7 +125,11 @@
                 "input": "public"
               }
             ],
-            "styles": ["./src/styles/style.scss", "src/styles.scss"],
+            "styles": [
+              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css",
+              "./src/styles/style.scss",
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         }
