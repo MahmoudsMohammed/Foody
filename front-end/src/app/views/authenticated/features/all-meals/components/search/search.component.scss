@@ -6,7 +6,7 @@
 .search {
   border: 1px solid var(--border);
   width: max(25vw, rem(230));
-  border-radius: rem(16);
+  border-radius: rem(18);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
   flex-grow: 1;
   border: none;
   outline: none;
-  padding: rem(8) rem(12);
+  padding: rem(12) rem(12);
   &::placeholder {
     color: var(--text-muted);
   }
@@ -28,9 +28,5 @@
 .search__btn {
   cursor: pointer;
   border: none;
-  padding: rem(8) rem(12);
-  &:disabled {
-    opacity: 0.8;
-    cursor: no-drop;
-  }
+  padding: rem(12) rem(12);
 }
