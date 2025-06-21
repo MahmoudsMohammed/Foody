@@ -4,6 +4,7 @@ import {
   DestroyRef,
   inject,
   OnInit,
+  signal,
   Signal,
 } from '@angular/core';
 import { SearchComponent } from './components/search/search.component';
@@ -28,15 +29,23 @@ export class AllMealsComponent implements OnInit {
   _actRoute = inject(ActivatedRoute);
   _allMeals = inject(AllMealsService);
   meals: Signal<any>;
+  searchFields = signal<searchFields>({ search: '', tag: 'All' });
 
   constructor() {
     this.meals = toSignal(
       this._actRoute.queryParamMap.pipe(
         takeUntilDestroyed(this.destroyRef),
         map((data: any) => {
+          this.searchFields.set({
+            search: data['params']['search'] || '',
+            tag: data['params']['tag'] || 'All',
+          });
           return {
             search: data['params']['search'] || '',
-            tag: data['params']['tag'] || null,
+            tag:
+              data['params']['tag'] === 'All' || !data['params']['tag']
+                ? null
+                : data['params']['tag'],
           };
         }),
         switchMap((data: searchFields) => this._allMeals.getMeals(data))

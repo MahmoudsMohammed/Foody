@@ -1,6 +1,6 @@
 <div class="all-meals">
-  <app-search />
-  <app-tags />
+  <app-search [search]="searchFields().search" />
+  <app-tags [tag]="searchFields().tag" />
   <div class="container">
     @for(meal of meals();track meal){
     <app-meal-card [meal]="meal" />

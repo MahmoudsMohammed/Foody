@@ -10,7 +10,7 @@ export class AllMealsService {
   getMeals(searchFields: searchFields): Observable<Food[]> {
     return of(this.#allMeals).pipe(
       map((data) => {
-        if (searchFields.search && searchFields.tag) {
+        if (searchFields.tag) {
           return data.filter(
             (m) =>
               m.name
