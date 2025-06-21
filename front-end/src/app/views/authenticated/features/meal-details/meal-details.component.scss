@@ -17,16 +17,20 @@
 
 .meal__img {
   margin: 0;
+  flex: 1;
   img {
     border-radius: rem(15);
-    // width: 90%;
   }
 }
 
 .meal__details {
   width: 100%;
+  flex: 1;
   @include colGap(15);
   align-items: start;
+  @include breakpoint(lg) {
+    gap: rem(25);
+  }
 }
 
 .meal__info {
@@ -74,8 +78,12 @@ button {
   padding: rem(12);
   border-radius: rem(15);
   border: none;
-  background-color: var(--error);
+  background-color: var(--primary);
   color: white;
+  transition: all var($half-transition-duration) ease-in-out;
+  &:hover {
+    background-color: var(--primary-hover);
+  }
 }
 .c-error {
   color: var(--error);
