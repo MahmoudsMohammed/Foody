@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { sample_foods } from '../../../../../../../public/data';
-import { Observable, of, filter, map } from 'rxjs';
+import { Observable, of, map } from 'rxjs';
 import { Food } from '../../../../../shared/models/meal';
 
 @Injectable({ providedIn: 'root' })

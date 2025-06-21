@@ -10,19 +10,7 @@
         [ngClass]="{ 'c-error': meal().favorite }"
       ></i>
     </div>
-    <div class="meal__rate">
-      @for (item of stars(); track $index) {
-      <i
-        class="fa-solid c-accent"
-        [ngClass]="{
-          'fa-star-half-stroke': item === 'half',
-          'fa-star': item === 'full' || item == 'none',
-          'c-accent': item === 'half' || item === 'full',
-          'c-text': item === 'none'
-        }"
-      ></i>
-      }
-    </div>
+    <app-rating [rating]="meal().stars" />
     <div class="meal__info between">
       <div class="meal_tags">
         @for(tag of meal().tags;track tag){
