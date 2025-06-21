@@ -5,9 +5,9 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { Food } from '../../models/meals.model';
 import { NgClass } from '@angular/common';
 import { Router } from '@angular/router';
+import { Food } from '../../../../../../shared/models/meal';
 
 @Component({
   selector: 'app-meal-card',

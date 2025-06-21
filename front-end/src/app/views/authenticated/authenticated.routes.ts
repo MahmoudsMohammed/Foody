@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthenticatedComponent } from './authenticated.component';
+import { mealDataResolver } from './features/meal-details/resolvers/meal-data.resolver';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,7 @@ export const routes: Routes = [
       },
       {
         path: 'meal/:id',
+        resolve: { meal: mealDataResolver },
         loadComponent: () =>
           import('./features/meal-details/meal-details.component').then(
             (m) => m.MealDetailsComponent

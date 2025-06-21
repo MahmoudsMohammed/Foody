@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { sample_foods, sample_tags } from '../../../../../../../public/data';
 import { filter, map, Observable, of } from 'rxjs';
-import { Food, searchFields, Tag } from '../models/meals.model';
+import { searchFields, Tag } from '../models/meals.model';
+import { Food } from '../../../../../shared/models/meal';
 
 @Injectable()
 export class AllMealsService {

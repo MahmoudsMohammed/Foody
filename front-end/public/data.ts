@@ -1,9 +1,7 @@
 // import { Tag } from './app/shared/models/Tag';
 
-import {
-  Food,
-  Tag,
-} from '../src/app/views/authenticated/features/all-meals/models/meals.model';
+import { Food } from '../src/app/shared/models/meal';
+import { Tag } from '../src/app/views/authenticated/features/all-meals/models/meals.model';
 
 export const sample_foods: Food[] = [
   {
