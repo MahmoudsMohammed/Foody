@@ -26,7 +26,7 @@
 // theme
 @mixin theme($theme-name) {
   $theme: map.get($themes, $theme-name);
-  // to create variables at level of classes which added to body
+  // to create variables & utility at level of classes which added to body
   @each $key, $value in $theme {
     --#{$key}: #{$value};
     .bg-#{$key} {

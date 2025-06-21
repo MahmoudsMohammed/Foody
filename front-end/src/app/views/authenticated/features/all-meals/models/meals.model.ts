@@ -9,3 +9,13 @@ export interface Food {
   imageUrl: string;
   tags: string[];
 }
+
+export interface Tag {
+  name: string;
+  count: number;
+}
+
+export interface searchFields {
+  search: string;
+  tag: string;
+}

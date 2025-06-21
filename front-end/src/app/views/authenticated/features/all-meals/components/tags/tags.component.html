@@ -1,0 +1,10 @@
+<div class="tags">
+  @if(tags()){ @for( tag of tags();track tag){
+  <button
+    class="tag fs-mini"
+    [ngClass]="{ active: tag.name === selectedTag() }"
+  >
+    {{ tag.name }}({{ tag.count }})
+  </button>
+  } }
+</div>

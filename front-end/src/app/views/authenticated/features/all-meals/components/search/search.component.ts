@@ -15,6 +15,8 @@ export class SearchComponent {
   _router = inject(Router);
 
   onSearch() {
-    this._router.navigate(['/user/all/', this.meal]);
+    this._router.navigate(['/user/all'], {
+      queryParams: { search: this.meal },
+    });
   }
 }

@@ -5,6 +5,7 @@
     type="text"
     [placeholder]="'allMeals.search' | translate"
     [(ngModel)]="meal"
+    (keydown.enter)="onSearch()"
   />
   <button
     [disabled]="meal.length === 0"

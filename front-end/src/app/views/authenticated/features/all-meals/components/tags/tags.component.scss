@@ -1,0 +1,19 @@
+@use "abstracts" as *;
+
+.tags {
+  @include rowGap(10);
+  justify-content: center;
+}
+.tag {
+  border-radius: rem(10);
+  padding: rem(5) rem(8);
+  border: 1px solid var(--border);
+  outline: none;
+  transition: background-color ease-in-out var(--$transition-duration);
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+  &.active {
+    background-color: var(--primary);
+  }
+}
