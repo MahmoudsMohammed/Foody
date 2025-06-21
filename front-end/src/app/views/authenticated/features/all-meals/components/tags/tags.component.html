@@ -3,6 +3,7 @@
   <button
     class="tag fs-mini"
     [ngClass]="{ active: tag.name === selectedTag() }"
+    (click)="onTagActivate(tag)"
   >
     {{ tag.name }}({{ tag.count }})
   </button>
