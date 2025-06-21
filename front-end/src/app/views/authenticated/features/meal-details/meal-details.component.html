@@ -13,20 +13,20 @@
     <app-rating [rating]="mealDetails().stars" />
     <div class="meal_origins">
       @for(origin of mealDetails().origins ; track origin){
-      <span>{{ origin }}</span>
+      <span class="fs-mini">{{ origin }}</span>
       }
     </div>
     <div class="meal_tags">
       @for(tag of mealDetails().tags ; track tag){
-      <span>{{ tag }}</span>
+      <span class="fs-mini">{{ tag }}</span>
       }
     </div>
     <p class="meal__cockTime">
       Time To Cock About <span>{{ mealDetails().cookTime }}</span> Minutes
     </p>
     <p class="meal__price">
-      <span>Price :</span> {{ mealDetails().price | currency }}
+      <span class="fs-h4">Price :</span> {{ mealDetails().price | currency }}
     </p>
-    <button>Add To Chart</button>
+    <button class="fs-small">Add To Chart</button>
   </div>
 </section>

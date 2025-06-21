@@ -27,6 +27,7 @@
   }
 }
 .header__user {
+  z-index: 10;
   @include rowGap(8);
   color: var(--primary);
   position: relative;
@@ -46,6 +47,7 @@
   }
 }
 .header__lang {
+  z-index: 10;
   @include rowGap(8);
   position: relative;
   color: var(--text-muted);

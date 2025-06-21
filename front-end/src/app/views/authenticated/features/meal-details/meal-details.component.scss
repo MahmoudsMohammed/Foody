@@ -1,3 +1,82 @@
+@use "abstracts" as *;
+
+.meal {
+  margin: rem(25) 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: rem(20);
+  padding: 0 rem(10);
+  @include breakpoint(md) {
+    flex-direction: row;
+    padding: 0 rem(25);
+    margin: rem(50) 0;
+    gap: rem(30);
+  }
+}
+
+.meal__img {
+  margin: 0;
+  img {
+    border-radius: rem(15);
+    // width: 90%;
+  }
+}
+
+.meal__details {
+  width: 100%;
+  @include colGap(15);
+  align-items: start;
+}
+
+.meal__info {
+  @extend %between;
+  width: 100%;
+  span {
+    font-weight: 600;
+  }
+}
+
+.meal_origins,
+.meal_tags {
+  @include rowGap(5);
+  flex-wrap: wrap;
+  width: 100%;
+  span {
+    background-color: var(--surface);
+    padding: rem(5);
+    border-radius: rem(5);
+    border: 1px solid var(--border);
+  }
+}
+
+.meal__cockTime {
+  padding: 0;
+  margin: 0;
+  span {
+    font-weight: 700;
+  }
+}
+
+.meal__price {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  span {
+    color: var(--text-muted);
+    font-weight: normal;
+  }
+}
+button {
+  width: 100%;
+  padding: rem(12);
+  border-radius: rem(15);
+  border: none;
+  background-color: var(--error);
+  color: white;
+}
 .c-error {
   color: var(--error);
 }
