@@ -13,6 +13,13 @@ export const routes: Routes = [
             (m) => m.AllMealsComponent
           ),
       },
+      {
+        path: 'meal/:id',
+        loadComponent: () =>
+          import('./features/meal-details/meal-details.component').then(
+            (m) => m.MealDetailsComponent
+          ),
+      },
     ],
   },
   {

@@ -2,10 +2,12 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
 } from '@angular/core';
 import { Food } from '../../models/meals.model';
 import { NgClass } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-meal-card',
@@ -16,6 +18,7 @@ import { NgClass } from '@angular/common';
 })
 export class MealCardComponent {
   meal = input.required<Food>({});
+  _router = inject(Router);
   stars = computed(() => {
     let arr = Array(5).fill(''),
       rate = this.meal().stars;
@@ -32,4 +35,8 @@ export class MealCardComponent {
     });
     return arr;
   });
+
+  onDisplayDetails(id: string) {
+    this._router.navigate(['/user/meal', id]);
+  }
 }

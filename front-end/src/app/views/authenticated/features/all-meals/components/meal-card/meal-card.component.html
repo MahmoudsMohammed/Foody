@@ -1,4 +1,4 @@
-<div class="meal">
+<div class="meal" (click)="onDisplayDetails(meal().id)">
   <figure class="meal__img">
     <img [src]="meal().imageUrl" alt="meal image" />
   </figure>
