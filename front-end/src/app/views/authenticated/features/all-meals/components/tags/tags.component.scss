@@ -1,8 +1,12 @@
 @use "abstracts" as *;
 
 .tags {
-  @include rowGap(10);
+  @include rowGap(5);
   justify-content: center;
+  flex-wrap: wrap;
+  @include breakpoint(md) {
+    @include rowGap(10);
+  }
 }
 .tag {
   border-radius: rem(10);
