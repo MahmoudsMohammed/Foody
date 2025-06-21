@@ -1,3 +1,4 @@
+import { CurrencyPipe, NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,10 +9,11 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take, tap } from 'rxjs';
+import { RatingComponent } from '../../../../shared/components/rating/rating.component';
 
 @Component({
   selector: 'app-meal-details',
-  imports: [],
+  imports: [NgClass, RatingComponent, CurrencyPipe],
   templateUrl: './meal-details.component.html',
   styleUrl: './meal-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
