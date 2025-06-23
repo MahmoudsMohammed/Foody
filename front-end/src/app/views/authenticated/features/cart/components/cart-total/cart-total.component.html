@@ -1,5 +1,7 @@
 <div class="total">
   <div class="total__count"><span>Count : </span> {{ totalCount() }}</div>
-  <div class="total__price"><span>Price : </span>{{ totalPrice() }}</div>
+  <div class="total__price">
+    <span>Price : </span>{{ totalPrice() | currency }}
+  </div>
   <button class="action-btn">Proceed to Checkout</button>
 </div>

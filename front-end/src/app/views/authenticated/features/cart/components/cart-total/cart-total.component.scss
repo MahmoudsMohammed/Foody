@@ -6,3 +6,17 @@
   padding: rem(15) 0;
   border-radius: rem(15);
 }
+
+.total__count {
+  margin-top: rem(50);
+  font-weight: 500;
+}
+
+.total__price {
+  margin-bottom: rem(50);
+  font-weight: 500;
+}
+
+span {
+  color: var(--text-muted);
+}
