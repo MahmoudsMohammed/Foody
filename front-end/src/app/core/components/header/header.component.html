@@ -11,9 +11,9 @@
           </a>
         </li>
         <li>
-          <a>
+          <a routerLink="/user/cart">
             <i class="fa-solid fa-cart-shopping"></i
-            >{{ "header.cart" | translate }}
+            ><span>{{ "header.cart" | translate }}({{ cartItems() }})</span>
           </a>
         </li>
         <li>

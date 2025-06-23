@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
 import { Configurations } from '../../services/configurations.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuDirective } from '../../../shared/directives/menu.directive';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -20,9 +21,11 @@ import { MenuDirective } from '../../../shared/directives/menu.directive';
 })
 export class HeaderComponent implements OnInit {
   _render = inject(Renderer2);
+  _cartService = inject(CartService);
   _configurations = inject(Configurations);
   appLang = computed(() => this._configurations.appLang());
   appTheme = computed(() => this._configurations.appTheme());
+  cartItems = computed(() => this._cartService.cartTotal());
 
   ngOnInit(): void {}
 

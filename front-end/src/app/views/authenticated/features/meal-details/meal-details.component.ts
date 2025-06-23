@@ -7,9 +7,10 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { take, tap } from 'rxjs';
 import { RatingComponent } from '../../../../shared/components/rating/rating.component';
+import { CartService } from '../../../../core/services/cart.service';
 
 @Component({
   selector: 'app-meal-details',
@@ -22,6 +23,8 @@ export class MealDetailsComponent implements OnInit {
   _activateRoute = inject(ActivatedRoute);
   mealDetails = signal<any>('');
   _injector = inject(Injector);
+  _cartService = inject(CartService);
+  _router = inject(Router);
 
   ngOnInit(): void {
     this._activateRoute.data
@@ -32,5 +35,10 @@ export class MealDetailsComponent implements OnInit {
         })
       )
       .subscribe();
+  }
+
+  onAddToCart() {
+    this._cartService.addProduct(this.mealDetails());
+    this._router.navigate(['/user/cart']);
   }
 }

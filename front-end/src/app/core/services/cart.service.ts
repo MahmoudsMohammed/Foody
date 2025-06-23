@@ -12,10 +12,12 @@ export class CartService {
   cartTotal = signal<number>(0);
   cartPrice = signal<number>(0);
   constructor() {
+    this.#cart = new Cart();
     if ('cart' in localStorage) {
-      this.#cart = JSON.parse(localStorage.getItem('cart')!);
-    } else {
-      this.#cart = new Cart();
+      const lsData = JSON.parse(localStorage.getItem('cart')!);
+      this.#cart.items = [...lsData.items];
+      this.#cart.totalCount = lsData.totalCount;
+      this.#cart.totalPrice = lsData.totalPrice;
     }
     this.setValues();
   }
@@ -48,6 +50,6 @@ export class CartService {
   }
 
   storeInLS() {
-    localStorage.setItem('cart', JSON.stringify(this.cartItems()));
+    localStorage.setItem('cart', JSON.stringify(this.#cart));
   }
 }
