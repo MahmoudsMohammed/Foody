@@ -5,7 +5,11 @@
 
 .cart__container {
   display: flex;
+  flex-direction: column;
   gap: rem(20);
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
 }
 
 .cart__products {
@@ -14,4 +18,8 @@
 
 .cart__total {
   flex: 1;
+  order: -1;
+  @include breakpoint(md) {
+    order: unset;
+  }
 }
