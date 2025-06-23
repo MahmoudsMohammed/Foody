@@ -6,15 +6,22 @@
     </figure>
     <span>{{ item.product.name }}</span>
     <div>
-      <select name="quantity" id="" [value]="item.quantity">
+      <select
+        name="quantity"
+        id=""
+        [value]="item.quantity"
+        (change)="onChangeQuantity(item, $event)"
+      >
         @for(c of count() ; track c){
-        <option [value]="c">{{ c }}</option>
+        <option [value]="c" [selected]="c === item.quantity">{{ c }}</option>
         }
       </select>
     </div>
     <span>{{ item.price }}</span>
     <div>
-      <button class="fs-mini">Remove <i class="fa-solid fa-trash"></i></button>
+      <button class="fs-mini" (click)="onRemoveProduct(item)">
+        Remove <i class="fa-solid fa-trash"></i>
+      </button>
     </div>
   </li>
   }

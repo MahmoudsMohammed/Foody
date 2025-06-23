@@ -34,12 +34,15 @@ export class Cart {
   }
 
   changeQuantity(meal: Food, quantity: number) {
-    quantity = quantity - 1;
     const product = this.items.find((m) => m.product.id === meal.id);
     product!.quantity = quantity;
     product!.price = quantity * product!.product.price;
-    this.totalCount += product?.quantity!;
-    this.totalPrice += product?.price!;
+    this.totalCount = this.items.reduce((acc, c) => {
+      return c.quantity + acc;
+    }, 0);
+    this.totalPrice = this.items.reduce((acc, c) => {
+      return c.price + acc;
+    }, 0);
   }
 
   clearChart() {
