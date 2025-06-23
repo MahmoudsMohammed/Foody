@@ -1,0 +1,46 @@
+@use "abstracts" as *;
+
+.products {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--primary);
+  border-radius: rem(15);
+}
+
+.products__product {
+  display: flex;
+  align-items: center;
+  padding: rem(20);
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--primary);
+  }
+  & *:not(img, button) {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  figure {
+    margin: 0;
+  }
+  img {
+    width: rem(100);
+    border-radius: 50%;
+  }
+  span {
+    color: var(--text-muted);
+  }
+  button {
+    @include rowGap(10);
+    background-color: var(--error);
+    border: none;
+    padding: rem(10);
+    border-radius: rem(15);
+    color: var(--bg);
+    transition: opacity $half-transition-duration ease-in-out;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

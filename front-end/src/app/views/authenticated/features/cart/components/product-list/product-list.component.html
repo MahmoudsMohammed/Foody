@@ -1,1 +1,19 @@
-<p>product-list works!</p>
+<ul class="products">
+  @for(item of items() ; track item.product.id){
+  <li class="products__product">
+    <figure>
+      <img [src]="item.product.imageUrl" alt="" />
+    </figure>
+    <span>{{ item.product.name }}</span>
+    <select name="quantity" id="" [value]="item.quantity">
+      @for(c of count() ; track c){
+      <option [value]="c">{{ c }}</option>
+      }
+    </select>
+    <span>{{ item.price }}</span>
+    <div>
+      <button class="fs-mini">Remove <i class="fa-solid fa-trash"></i></button>
+    </div>
+  </li>
+  }
+</ul>

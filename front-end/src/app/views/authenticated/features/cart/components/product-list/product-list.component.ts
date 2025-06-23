@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  signal,
+} from '@angular/core';
 import { Product } from '../../models/product.model';
 
 @Component({
@@ -10,4 +15,5 @@ import { Product } from '../../models/product.model';
 })
 export class ProductListComponent {
   items = input.required<Product[]>();
+  count = signal<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 10]);
 }
