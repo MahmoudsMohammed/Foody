@@ -73,18 +73,7 @@
     font-weight: normal;
   }
 }
-button {
-  width: 100%;
-  padding: rem(12);
-  border-radius: rem(15);
-  border: none;
-  background-color: var(--primary);
-  color: white;
-  transition: all var($half-transition-duration) ease-in-out;
-  &:hover {
-    background-color: var(--primary-hover);
-  }
-}
+
 .c-error {
   color: var(--error);
 }

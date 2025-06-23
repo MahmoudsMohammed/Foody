@@ -1,0 +1,17 @@
+@use "abstracts" as *;
+.cart {
+  padding: rem(20);
+}
+
+.cart__container {
+  display: flex;
+  gap: rem(20);
+}
+
+.cart__products {
+  flex: 2;
+}
+
+.cart__total {
+  flex: 1;
+}

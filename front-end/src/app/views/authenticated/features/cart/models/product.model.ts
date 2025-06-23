@@ -9,9 +9,4 @@ export class Product {
     this.price = product.price;
     this.quantity = 1;
   }
-
-  changeQuantity(quantity: number) {
-    this.quantity = quantity;
-    this.price *= this.quantity;
-  }
 }

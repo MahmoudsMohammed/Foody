@@ -31,3 +31,24 @@ button {
 a {
   text-decoration: none;
 }
+
+.page-header {
+  margin: 0;
+  padding: 0;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.action-btn {
+  font-size: map.get($map: $font-sizes, $key: small);
+  width: 90%;
+  padding: rem(12);
+  border-radius: rem(15);
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  transition: all var($half-transition-duration) ease-in-out;
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+}

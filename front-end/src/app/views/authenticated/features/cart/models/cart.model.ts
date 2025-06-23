@@ -19,7 +19,8 @@ export class Cart {
       this.totalPrice += meal.price;
       this.totalCount++;
     } else {
-      oldMeal.changeQuantity(oldMeal.quantity + 1);
+      oldMeal.quantity += 1;
+      oldMeal.price = oldMeal.quantity * oldMeal.product.price;
       this.totalPrice += meal.price;
       this.totalCount++;
     }
@@ -35,7 +36,8 @@ export class Cart {
   changeQuantity(meal: Food, quantity: number) {
     quantity = quantity - 1;
     const product = this.items.find((m) => m.product.id === meal.id);
-    product?.changeQuantity(quantity);
+    product!.quantity = quantity;
+    product!.price = quantity * product!.product.price;
     this.totalCount += product?.quantity!;
     this.totalPrice += product?.price!;
   }

@@ -1,0 +1,8 @@
+@use "abstracts" as *;
+
+.total {
+  @include colGap(15);
+  border: 1px solid var(--primary);
+  padding: rem(15) 0;
+  border-radius: rem(15);
+}
