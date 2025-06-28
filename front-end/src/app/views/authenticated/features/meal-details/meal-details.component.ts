@@ -11,10 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { take, tap } from 'rxjs';
 import { RatingComponent } from '../../../../shared/components/rating/rating.component';
 import { CartService } from '../../../../core/services/cart.service';
+import { NoDataComponent } from '../../../../shared/components/no-data/no-data.component';
 
 @Component({
   selector: 'app-meal-details',
-  imports: [NgClass, RatingComponent, CurrencyPipe],
+  imports: [NgClass, RatingComponent, CurrencyPipe, NoDataComponent],
   templateUrl: './meal-details.component.html',
   styleUrl: './meal-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -7,10 +7,11 @@ import {
 import { CartService } from '../../../../core/services/cart.service';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { NoDataComponent } from '../../../../shared/components/no-data/no-data.component';
 
 @Component({
   selector: 'app-cart',
-  imports: [CartTotalComponent, ProductListComponent],
+  imports: [CartTotalComponent, ProductListComponent, NoDataComponent],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

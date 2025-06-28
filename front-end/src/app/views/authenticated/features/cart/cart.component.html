@@ -1,5 +1,6 @@
 <section class="cart">
   <h2 class="page-header">Cart Page</h2>
+  @if(cartItems().length > 0){
   <div class="cart__container">
     <div class="cart__products">
       <app-product-list [items]="cartItems()" />
@@ -8,4 +9,10 @@
       <app-cart-total [totalPrice]="cartTotal()" [totalCount]="cartCount()" />
     </div>
   </div>
+  }@else {
+  <app-no-data
+    [message]="'The Cart Is Empty :)'"
+    [resetText]="'Go Home Page'"
+  />
+  }
 </section>
