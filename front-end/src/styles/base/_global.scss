@@ -49,6 +49,7 @@ a {
   background-color: var(--primary);
   color: white;
   transition: all var($half-transition-duration) ease-in-out;
+  margin: auto;
   &:hover {
     background-color: var(--primary-hover);
   }

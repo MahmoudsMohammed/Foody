@@ -1,6 +1,13 @@
-import { Component, inject, OnInit, Renderer2 } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Configurations } from './core/services/configurations.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +19,8 @@ export class AppComponent implements OnInit {
   title = 'front-end';
   _configurationsService = inject(Configurations);
   _render = inject(Renderer2);
+  _router = inject(Router);
+  _ref = inject(DestroyRef);
 
   ngOnInit(): void {
     // Set Default App Language
@@ -28,5 +37,17 @@ export class AppComponent implements OnInit {
       localStorage.getItem('theme') ?? 'light'
     );
     this._render.addClass(document.body, theme);
+
+    // Scroll to Top After Navigation End
+    this._router.events
+      .pipe(takeUntilDestroyed(this._ref))
+      .subscribe((event: any) => {
+        if (event instanceof NavigationEnd) {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        }
+      });
   }
 }
