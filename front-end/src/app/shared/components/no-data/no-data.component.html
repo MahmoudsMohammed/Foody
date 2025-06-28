@@ -1,0 +1,11 @@
+<div class="no-data">
+  <figure class="no-data__img">
+    <img src="noData.jpg" alt="" />
+  </figure>
+  <p class="no-data__message">
+    {{ message() }}
+  </p>
+  <button class="no-data__action fs-small" (click)="onReset()">
+    {{ resetText() }}
+  </button>
+</div>

@@ -1,0 +1,31 @@
+@use "abstracts" as *;
+@use "sass:map";
+
+.no-data {
+  @include colGap(20);
+}
+.no-data__img {
+  margin: 0;
+  img {
+    width: min(90%, rem(400));
+    margin: auto;
+  }
+}
+
+.no-data__message {
+  font-weight: map.get($font-weights, four);
+  font-size: map.get($font-sizes, h4);
+  color: var(--text-muted);
+}
+
+.no-data__action {
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  padding: rem(8) rem(15);
+  border-radius: rem(5);
+  transition: background-color ease-in-out $half-transition-duration;
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+}

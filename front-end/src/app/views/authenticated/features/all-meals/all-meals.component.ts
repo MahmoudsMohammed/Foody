@@ -15,10 +15,11 @@ import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { AllMealsService } from './services/allmeals.service';
 import { searchFields } from './models/meals.model';
 import { TagsComponent } from './components/tags/tags.component';
+import { NoDataComponent } from '../../../../shared/components/no-data/no-data.component';
 
 @Component({
   selector: 'app-all-meals',
-  imports: [SearchComponent, MealCardComponent, TagsComponent],
+  imports: [SearchComponent, MealCardComponent, TagsComponent, NoDataComponent],
   providers: [AllMealsService],
   templateUrl: './all-meals.component.html',
   styleUrl: './all-meals.component.scss',

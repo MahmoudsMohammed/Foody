@@ -1,9 +1,13 @@
 <div class="all-meals">
   <app-search [search]="searchFields().search" />
   <app-tags [tag]="searchFields().tag" />
+  @if(meals().length > 0){
   <div class="container">
     @for(meal of meals();track meal){
     <app-meal-card [meal]="meal" />
     }
   </div>
+  }@else {
+  <app-no-data [message]="'No Data Found'" [resetText]="'Reset Filters'" />
+  }
 </div>
