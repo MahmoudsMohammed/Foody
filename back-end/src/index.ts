@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import { sample_foods } from './data';
+import { sample_foods, sample_tags } from './data';
 
 const app = express();
 const PORT = 3000;
@@ -29,6 +29,11 @@ app.get('/meals', (req: Request, res: Response) => {
   }
   res.send(data);
 });
+
+app.get('/tags', (req: Request, res: Response) => {
+  res.send(sample_tags);
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
