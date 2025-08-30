@@ -30,10 +30,16 @@ app.get('/meals', (req: Request, res: Response) => {
   res.send(data);
 });
 
+app.get('/meal/:id', (req: Request, res: Response) => {
+  const mealId = req.params.id;
+  let data = [];
+  data = sample_foods.filter((m) => m.id === mealId);
+  return res.send(data);
+});
+
 app.get('/tags', (req: Request, res: Response) => {
   res.send(sample_tags);
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { sample_foods } from '../../../../../../../public/data';
 import { Observable, of, map } from 'rxjs';
 import { Food } from '../../../../../shared/models/meal';
 
