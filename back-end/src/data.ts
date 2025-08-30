@@ -1,7 +1,4 @@
-// import { Tag } from './app/shared/models/Tag';
-
-import { Food } from '../src/app/shared/models/meal';
-import { Tag } from '../src/app/views/authenticated/features/all-meals/models/meals.model';
+import { Food, Tag } from './model/data.model';
 
 export const sample_foods: Food[] = [
   {
@@ -12,7 +9,7 @@ export const sample_foods: Food[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.5,
-    imageUrl: './food-1.jpg',
+    imageUrl: './media/food-1.jpg',
     tags: ['FastFood', 'Pizza', 'Lunch'],
   },
   {
@@ -23,7 +20,7 @@ export const sample_foods: Food[] = [
     favorite: true,
     origins: ['persia', 'middle east', 'china'],
     stars: 4.7,
-    imageUrl: './food-2.jpg',
+    imageUrl: './media/food-2.jpg',
     tags: ['SlowFood', 'Lunch'],
   },
   {
@@ -34,7 +31,7 @@ export const sample_foods: Food[] = [
     favorite: false,
     origins: ['germany', 'us'],
     stars: 3.5,
-    imageUrl: './food-3.jpg',
+    imageUrl: './media/food-3.jpg',
     tags: ['FastFood', 'Hamburger'],
   },
   {
@@ -45,7 +42,7 @@ export const sample_foods: Food[] = [
     favorite: true,
     origins: ['belgium', 'france'],
     stars: 3.3,
-    imageUrl: './food-4.jpg',
+    imageUrl: './media/food-4.jpg',
     tags: ['FastFood', 'Fry'],
   },
   {
@@ -56,7 +53,7 @@ export const sample_foods: Food[] = [
     favorite: false,
     origins: ['india', 'asia'],
     stars: 3.0,
-    imageUrl: './food-5.jpg',
+    imageUrl: './media/food-5.jpg',
     tags: ['SlowFood', 'Soup'],
   },
   {
@@ -67,7 +64,7 @@ export const sample_foods: Food[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: './food-6.jpg',
+    imageUrl: './media/food-6.jpg',
     tags: ['FastFood', 'Pizza', 'Lunch'],
   },
 ];
